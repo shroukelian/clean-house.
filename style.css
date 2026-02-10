@@ -1591,3 +1591,30 @@ html{
 .whatsapp-sticky {
     z-index: 1100;
 }
+
+
+
+
+
+
+
+
+/* ضبط أساسيات الصفحة لمنع التداخل والاهتزاز */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* يمنع السكرول يمين وشمال نهائياً */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* يضمن أن الحواف والـ Padding لا تزيد من عرض العناصر */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* مسافة أمان على الأجناب في الموبايل */
+}
