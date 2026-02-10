@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">تفاصيل الخدمة | شركة تنظيف بالطائف</title>
+    
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #00a8ff;
+            --dark-blue: #0052cc;
+            --deep-navy: #1a2a6c;
+            --text-gray: #444;
+            --light-bg: #f4f8fb;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--light-bg); line-height: 1.8; overflow-x: hidden; }
+
+        /* Navigation */
+        .article-nav {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .back-home {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .back-home:hover { transform: translateX(-5px); color: var(--dark-blue); }
+        .logo-brand { font-weight: 900; font-size: 1.5rem; color: var(--deep-navy); }
+
+        /* Header / Hero */
+        .article-hero {
+            background: linear-gradient(135deg, var(--deep-navy), var(--dark-blue));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        .article-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .meta-info { display: flex; justify-content: center; gap: 20px; opacity: 0.9; font-size: 0.95rem; }
+
+        /* Main Content Layout */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .main-article-body {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+        }
+
+        .featured-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* Dynamic Content Styling */
+        .rendered-content h2 { color: var(--deep-navy); font-size: 1.8rem; margin: 35px 0 20px; border-right: 6px solid var(--primary); padding-right: 15px; }
+        .rendered-content p { color: var(--text-gray); font-size: 1.15rem; margin-bottom: 20px; text-align: justify; }
+        .rendered-content ul { margin: 20px 0; padding-right: 25px; }
+        .rendered-content li { margin-bottom: 15px; color: var(--text-gray); font-weight: 600; }
+        .rendered-content strong { color: var(--dark-blue); }
+
+        /* Sidebar */
+        .sidebar-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+        .sidebar-item h3 { color: var(--deep-navy); margin-bottom: 20px; font-size: 1.3rem; border-bottom: 2px solid var(--light-bg); padding-bottom: 10px; }
+        .side-links { list-style: none; }
+        .side-links li { margin-bottom: 12px; }
+        .side-links li a { text-decoration: none; color: var(--text-gray); transition: 0.3s; display: block; }
+        .side-links li a:hover { color: var(--primary); padding-right: 8px; }
+
+        /* Call To Action */
+        .cta-box {
+            background: linear-gradient(45deg, var(--primary), var(--dark-blue));
+            color: var(--white);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .cta-box h2 { margin-bottom: 15px; }
+        .cta-btns { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+        .btn-call, .btn-wa {
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            color: var(--white);
+            transition: 0.3s;
+        }
+        .btn-call { background: var(--deep-navy); }
+        .btn-wa { background: #25d366; }
+        .btn-call:hover, .btn-wa:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* Animations */
+        .animate-up { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .show { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .content-wrapper { grid-template-columns: 1fr; }
+            .featured-img { height: 300px; }
+            .article-hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="article-nav">
+        <div class="nav-container">
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+            <div class="logo-brand">كلين هاوس</div>
+        </div>
+    </nav>
+
+    <header class="article-hero">
+        <div class="nav-container">
+            <h1 id="art-title" class="animate-up">جاري تحميل المقال...</h1>
+            <div class="meta-info animate-up">
+                <span id="art-date"></span>
+                <span><i class="fas fa-user-circle"></i> فريق شركة تنظيف بالطائف</span>
+                <span><i class="fas fa-shield-alt"></i> خدمة معتمدة</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <article class="main-article-body animate-up">
+            <img id="art-img" src="" alt="" class="featured-img">
+            <div id="art-body" class="rendered-content">
+            </div>
+
+            <div class="cta-box animate-up">
+                <h2>هل أنت جاهز لتجربة نظافة مثالية؟</h2>
+                <p>تواصل مع <strong>شركة تنظيف بالطائف</strong> الآن واحصل على عرض سعر مجاني وخصم يصل إلى 30% لجميع خدماتنا.</p>
+                <div class="cta-btns">
+                    <a href="tel:0558850925" class="btn-call"><i class="fas fa-phone"></i> اتصل بنا الآن</a>
+                    <a href="https://wa.me/966558850925" class="btn-wa"><i class="fab fa-whatsapp"></i> واتساب</a>
+                </div>
+            </div>
+        </article>
+
+        <aside class="sidebar">
+            <div class="sidebar-item animate-up">
+                <h3>خدمات ذات صلة</h3>
+                <ul class="side-links">
+                    <li><a href="article.html?id=tanks"><i class="fas fa-chevron-left"></i> تنظيف وتعقيم خزانات</a></li>
+                    <li><a href="article.html?id=villas"><i class="fas fa-chevron-left"></i> تنظيف فلل وقصور</a></li>
+                    <li><a href="article.html?id=sofa"><i class="fas fa-chevron-left"></i> غسيل مجالس وكنب</a></li>
+                    <li><a href="article.html?id=pests"><i class="fas fa-chevron-left"></i> مكافحة حشرات ورش مبيدات</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-item animate-up" style="background: var(--deep-navy); color: white;">
+                <h3>لماذا نحن؟</h3>
+                <p style="font-size: 0.9rem; opacity: 0.8;">لأننا في شركة تنظيف بالطائف نجمع بين الخبرة، الأمانة، والسرعة، ونستخدم أفضل المواد الآمنة عالمياً.</p>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        const blogData = {
+            "tanks": {
+                title: "دليل شركة تنظيف خزانات بالطائف: أهمية التعقيم الدوري وطرق حماية المياه",
+                date: "10 فبراير 2024",
+                img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+                body: `
+                    <h2>أهمية تنظيف الخزانات في مدينة الطائف</h2>
+                    <p>تعتبر خزانات المياه هي المصدر الأساسي للحياة في منازلنا، ونظراً لطبيعة الأجواء في الطائف وتراكم الأتربة، فإن الخزانات تصبح بمرور الوقت مخزناً للرواسب والطحالب. نحن في <strong>شركة تنظيف بالطائف</strong> نؤكد أن المياه الملوثة في الخزانات قد تسبب أمراضاً معوية وجلدية خطيرة، لذا فإن التنظيف الدوري كل 6 أشهر ليس رفاهية بل ضرورة قصوى.</p>
+                    
+                    <h2>خطوات العمل الاحترافية في شركة تنظيف خزانات بالطائف</h2>
+                    <p>عملية التنظيف لدينا ليست مجرد شطف للمياه، بل هي عملية هندسية وكيميائية دقيقة تشمل:</p>
+                    <ul>
+                        <li><strong>تفريغ الخزان تماماً:</strong> نستخدم مضخات عملاقة لسحب المياه الملوثة والرواسب الطينية من القاع.</li>
+                        <li><strong>التنظيف الميكانيكي:</strong> ينزل فريقنا المتخصص لفرك الجدران والأسقف بمواد قوية تزيل الطحالب الملتصقة.</li>
+                        <li><strong>التعقيم بالكلور المركز:</strong> نستخدم نسباً معتمدة من وزارة الصحة لقتل 100% من البكتيريا والفيروسات.</li>
+                        <li><strong>العزل المائي والحراري:</strong> كأفضل <strong>شركة عزل خزانات بالطائف</strong>، نقوم بفحص التشققات وعزلها بمواد إيبوكسي تمنع تسرب المياه للخارج أو دخول الحشرات للداخل.</li>
+                    </ul>
+                    
+                    <h2>لماذا تختار خدمة غسيل وتعقيم خزانات بالطائف لدينا؟</h2>
+                    <p>نتميز في <strong>شركة تنظيف بالطائف</strong> باستخدام أجهزة قياس نسبة الأملاح والشوائب بعد التنظيف لضمان وصول مياه نقية تماماً لصنبورك. خبرتنا تمتد لأكثر من 15 عاماً في التعامل مع كافة أحجام الخزانات العلوية والأرضية.</p>
+                `
+            },
+            "sofa": {
+                title: "أسرار شركة تنظيف مجالس بالبخار بالطائف لتجديد أثاثك وإزالة أصعب البقع",
+                date: "08 فبراير 2024",
+                img: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80",
+                body: `
+                    <h2>لماذا البخار هو الحل الأمثل للمجالس العربية؟</h2>
+                    <p>المجالس والكنب هي واجهة البيت السعودي، وكثيراً ما تتعرض لبقع الأطعمة والمشروبات. في <strong>شركة تنظيف بالطائف</strong>، نعتمد على تقنية البخار الجاف التي تصل حرارتها إلى 120 درجة مئوية. هذه التقنية تفتت جزيئات الدهون والاتساخات العميقة دون الحاجة لإغراق الكنب بالمياه، مما يحمي الأخشاب والإسفنج من التلف.</p>
+
+                    <h2>مميزات شركة تنظيف كنب بالطائف لدينا</h2>
+                    <p>نحن لا ننظف فقط، بل نعيد إحياء الأثاث من خلال:</p>
+                    <ul>
+                        <li><strong>إزالة الروائح الكريهة:</strong> البخار يقضي على بكتيريا العفن والروائح المنبعثة من الرطوبة.</li>
+                        <li><strong>التعقيم الفوري:</strong> القضاء التام على حشرات الفراش (البق) والعث الذي يسبب الحساسية.</li>
+                        <li><strong>الحفاظ على الألوان:</strong> نستخدم مواد كيميائية متعادلة تحافظ على زهاء الألوان ولا تسبب بهتان الأنسجة.</li>
+                        <li><strong>تجفيف سريع:</strong> بفضل البخار الجاف، يمكنك استخدام مجلسك بعد ساعتين فقط من التنظيف.</li>
+                    </ul>
+
+                    <h2>شركة غسيل كنب وسجاد بالبخار بالطائف</h2>
+                    <p>نمتلك في <strong>شركة تنظيف بالطائف</strong> مغاسل آلية للسجاد وأجهزة محمولة للكنب والمجالس، لنوفر لك خدمة منزلية متكاملة تليق بفخامة منزلك.</p>
+                `
+            },
+            "villas": {
+                title: "دليل شركة تنظيف فيلل بالطائف: نظافة شاملة للقصور والفلل الجديدة والمفروشة",
+                date: "05 فبراير 2024",
+                img: "https://images.unsplash.com/photo-1603614486387-276f74fcbe2a?auto=format&fit=crop&w=1200&q=80",
+                body: `
+                    <h2>نظافة الفلل بعد التشطيب (الفلل الجديدة)</h2>
+                    <p>الفلل الجديدة في الطائف تتطلب مجهوداً جباراً لإزالة آثار الدهانات والأسمنت والتربة الناعمة. في <strong>شركة تنظيف فيلل بالطائف</strong>، نرسل طاقماً مكوناً من 10 إلى 15 عاملاً مدربين على استخدام ماكينات جلي الرخام وتلميع الواجهات، لضمان استلام فيلتك وهي تبرق من النظافة.</p>
+
+                    <h2>شركة جلي رخام وبلاط بالطائف</h2>
+                    <p>الأرضيات هي أساس جمال الفيلا. نحن في <strong>شركة جلي وتلميع الرخام والسيراميك بالطائف</strong> نستخدم أقراص الألماس والكريستال لتسوية الأرضيات وإزالة الخدوش، ثم تلميعها لتعود كالمرآة تماماً.</p>
+
+                    <h2>ماذا تشمل خدمة شركة تنظيف بالطائف للفلل؟</h2>
+                    <ul>
+                        <li><strong>تنظيف الواجهات:</strong> غسيل الواجهات الزجاجية والحجرية باستخدام مسدسات المياه المندفعة.</li>
+                        <li><strong>تعقيم الحمامات والمطابخ:</strong> إزالة الدهون من الشفاطات وتطهير المراحيض بأقوى المعقمات.</li>
+                        <li><strong>تنظيف الملاحق والمسابح:</strong> غسيل الاستراحات الخارجية والمسابح وتجهيزها للاستخدام.</li>
+                        <li><strong>تلميع النجف والأثاث:</strong> تنظيف الثريات الكريستالية بعناية فائقة وتلميع الأخشاب.</li>
+                    </ul>
+                    <p>مع <strong>شركة تنظيف بالطائف</strong>، نحن نتكفل بكل التفاصيل الصغيرة لتستمتع أنت بجمال منزلك.</p>
+                `
+            },
+            "pests": {
+                title: "خطة شركة مكافحة حشرات بالطائف لإبادة الآفات نهائياً بضمان معتمد",
+                date: "01 فبراير 2024",
+                img: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=1200&q=80",
+                body: `
+                    <h2>حماية منزلك من الحشرات والقوارض في الطائف</h2>
+                    <p>الحشرات ليست مجرد إزعاج، بل هي ناقل للأمراض ومدمر للممتلكات. في <strong>شركة مكافحة حشرات بالطائف</strong>، نتبع استراتيجية "الإبادة المتكاملة" التي تبدأ بالبحث عن بؤر التكاثر وليس فقط رش الحشرات الظاهرة.</p>
+
+                    <h2>أنواع الحشرات التي نكافحها</h2>
+                    <ul>
+                        <li><strong>النمل الأبيض (الرمة):</strong> نستخدم أقوى مبيدات الحقن قبل وبعد البناء لحماية الأخشاب والأساسات.</li>
+                        <li><strong>الصراصير والنمل الأسود:</strong> رش مبيدات عديمة الرائحة آمنة على المطبخ والأواني.</li>
+                        <li><strong>بق الفراش:</strong> مكافحة بيولوجية وحرارية لضمان القضاء على البويضات واليرقات.</li>
+                        <li><strong>القوارض والفئران:</strong> وضع محطات طعوم ذكية في مداخل الفلل والمخازن.</li>
+                    </ul>
+
+                    <h2>لماذا نحن أفضل شركة تنظيف بالطائف لمكافحة الحشرات؟</h2>
+                    <p>لأننا نستخدم مبيدات حاصلة على تصاريح وزارة الصحة السعودية ومنظمة الصحة العالمية، وهي آمنة تماماً على الأطفال وكبار السن. كما نقدم شهادة ضمان لمدة تتراوح بين 6 أشهر إلى عام كامل مع متابعة دورية مجانية.</p>
+                `
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            if (id && blogData[id]) {
+                const article = blogData[id];
+                
+                document.getElementById('art-title').innerText = article.title;
+                document.getElementById('page-title').innerText = article.title;
+                document.getElementById('art-date').innerHTML = `<i class="fas fa-calendar-alt"></i> ${article.date}`;
+                document.getElementById('art-img').src = article.img;
+                document.getElementById('art-img').alt = article.title;
+                document.getElementById('art-body').innerHTML = article.body;
+
+                setTimeout(() => {
+                    document.querySelectorAll('.animate-up').forEach(el => el.classList.add('show'));
+                }, 100);
+
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.article-nav');
+            if(window.scrollY > 50) {
+                nav.style.background = 'rgba(255,255,255,0.98)';
+            } else {
+                nav.style.background = '#ffffff';
+            }
+        });
+    </script>
+</body>
+</html>
