@@ -1619,3 +1619,20 @@ html, body {
     padding: 0 15px; /* مسافة أمان على الأجناب في الموبايل */
 }
 
+.service-img {
+    width: 100%;
+    height: 200px; /* تقدري تتحكمي في الارتفاع */
+    overflow: hidden;
+    border-radius: 10px 10px 0 0; /* عشان الحواف اللي فوق تكون دائرية مع الكارد */
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عشان الصورة تملأ المساحة بدون ما تتمط */
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover .service-img img {
+    transform: scale(1.1); /* تأثير زووم خفيف عند الوقوف بالماوس */
+}
