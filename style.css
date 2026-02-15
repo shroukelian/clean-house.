@@ -1,6 +1,5 @@
 :root {
     --main-color: #00a8ff;
-    /* أزرق زاهي ونظيف */
     --dark-blue: #0052cc;
     --gold-accent: #fbc531;
     --white: #ffffff;
@@ -19,18 +18,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Navbar */
-/* .main-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 15px 0;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-} */
+
 
 .container {
     display: flex;
@@ -95,7 +83,6 @@ body {
     transition: 0.3s;
 }
 
-/* التاثير المطلوب: بوردر وانميشن عند الهوفر */
 .nav-links li a:hover,
 .nav-links li a.active {
     border-color: var(--main-color);
@@ -138,7 +125,6 @@ body {
     width: 100%;
     height: 100vh;
     background: url('images/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg');
-    /* صورة كمثال */
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -273,7 +259,6 @@ body {
     }
 }
 
-/* Mobile Menu - Side Menu from Top */
 .menu-btn {
     display: none;
     font-size: 1.8rem;
@@ -289,7 +274,6 @@ body {
     .nav-links {
         position: fixed;
         top: -100%;
-        /* مخفية فوق */
         left: 0;
         width: 100%;
         height: auto;
@@ -303,7 +287,6 @@ body {
 
     .nav-links.active {
         top: 80px;
-        /* تنزل بسلاسة */
     }
 
     .main-title {
@@ -319,7 +302,6 @@ body {
 /* About Section Styles */
 .about-section {
     padding: 100px 0;
-    /* خلفية دجراديه فخمة */
     background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 50%, #bbdefb 100%);
     overflow: hidden;
     position: relative;
@@ -483,12 +465,10 @@ body {
 
 .about-content.animate-on-scroll {
     transform: translateX(100px);
-    /* يبدأ من اليمين */
 }
 
 .about-image-area.animate-on-scroll {
     transform: translateX(-100px);
-    /* يبدأ من اليسار */
 }
 
 .animate-active {
@@ -531,7 +511,6 @@ body {
     background-color: var(--light-bg);
 }
 
-/* الحاوية العريضة التي تملأ الشاشة */
 .full-container {
     max-width: 1450px;
     margin: 0 auto;
@@ -568,15 +547,12 @@ body {
     border-radius: 5px;
 }
 
-/* شبكة الخدمات الذكية */
 .services-wrapper {
     display: grid;
-    /* ستضع 3 أو 4 تلقائياً بناءً على حجم الشاشة لتملأ الفراغ */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-/* تصميم الكارت الجديد */
 .service-box {
     background: #fff;
     padding: 40px 30px;
@@ -589,7 +565,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    /* لتوحيد أطوال الكروت */
 }
 
 .service-box:hover {
@@ -661,7 +636,6 @@ body {
     transform: translateY(0);
 }
 
-/* الموبايل والتابلت */
 @media (max-width: 768px) {
     .full-container {
         padding: 0 20px;
@@ -675,12 +649,10 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* كارت واحد في الموبايل */
 }
 
 .why-us-new {
     padding: 120px 0;
-    /* خلفية دجراديه فخمة جداً */
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     position: relative;
     overflow: hidden;
@@ -693,7 +665,6 @@ body {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    /* العنوان فوق والشبكة تحته */
     align-items: center;
 }
 
@@ -712,7 +683,6 @@ body {
 .why-subtitle {
     font-size: 1.8rem;
     color: #00d2ff;
-    /* لون لبني مضيء */
     margin-top: 15px;
 }
 
@@ -723,7 +693,6 @@ body {
     margin: 20px auto;
 }
 
-/* الشبكة لتملأ الشاشة */
 .why-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -731,7 +700,6 @@ body {
     width: 100%;
 }
 
-/* الكروت الزجاجية Modern */
 .why-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -750,7 +718,6 @@ body {
     border-color: #00d2ff;
 }
 
-/* حركة التوهج داخل الكارت */
 .card-glow {
     position: absolute;
     top: -50%;
@@ -789,7 +756,6 @@ body {
     line-height: 1.8;
 }
 
-/* صندوق الخبرة السفلية */
 .experience-showcase {
     margin-top: 60px;
     width: 100%;
@@ -826,10 +792,8 @@ body {
 .blog-section {
     padding: 100px 0;
     background-color: #fcfdfe;
-    /* لون خلفية ناعم جداً */
 }
 
-/* شبكة المدونة - 4 أعمدة في الشاشات الكبيرة */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -838,7 +802,6 @@ body {
     margin-top: 50px;
 }
 
-/* الكارت */
 .blog-card {
     background: #ffffff;
     border-radius: 30px;
@@ -855,7 +818,6 @@ body {
     box-shadow: 0 25px 50px rgba(0, 168, 255, 0.15);
 }
 
-/* الصورة داخل المقال وانميشن الزووم */
 .blog-img-container {
     position: relative;
     height: 240px;
@@ -873,7 +835,6 @@ body {
     transform: scale(1.15) rotate(2deg);
 }
 
-/* شارة التصنيف (Badge) */
 .blog-badge {
     position: absolute;
     top: 20px;
@@ -887,7 +848,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
 }
 
-/* محتوى المقال */
 .blog-content {
     padding: 30px;
     flex-grow: 1;
@@ -922,7 +882,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* زر اقرأ المزيد */
 .blog-link {
     text-decoration: none;
     color: #1a2a6c;
@@ -946,7 +905,6 @@ body {
     transform: translateX(-10px);
 }
 
-/* التجاوب */
 @media (max-width: 1200px) {
     .blog-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -969,12 +927,10 @@ body {
     }
 }
 
-/* --- إصلاح الهيدر في الموبايل --- */
 @media (max-width: 992px) {
     .main-header .container {
         display: flex;
         flex-direction: row-reverse;
-        /* يعكس الترتيب: اللوجو يمين والأكشنز يسار */
         justify-content: space-between;
         align-items: center;
         padding: 0 15px;
@@ -982,17 +938,14 @@ body {
 
     .logo-box {
         order: 2;
-        /* اللوجو يمين */
     }
 
     .actions {
         order: 1;
-        /* الأزرار يسار */
         display: flex;
         gap: 10px;
     }
 
-    /* إخفاء كلمة اتصل بنا في الموبايل */
     .call-btn {
         padding: 10px;
         width: 40px;
@@ -1003,11 +956,9 @@ body {
     }
 }
 
-/* --- سكشن تواصل معنا --- */
 .contact-section {
     padding: 100px 0;
     position: relative;
-    /* نضع الصورة التي أرفقتها كخلفية */
     background: url('images/jeshoots-com-__ZMnefoI3k-unsplash.jpg') center/cover fixed;
 }
 
@@ -1019,7 +970,6 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.5);
-    /* تفتيح الصورة لتظهر البيانات بوضوح */
 }
 
 .contact-wrapper {
@@ -1092,7 +1042,6 @@ body {
     color: var(--main-color);
 }
 
-/* الفورم */
 .form-row {
     display: flex;
     gap: 15px;
@@ -1128,24 +1077,20 @@ body {
     transform: translateY(-5px);
 }
 
-/* --- الفوتر المحسن --- */
 .main-footer {
     background: #0c1a30;
     color: #fff;
     padding: 60px 0 0;
     direction: rtl;
-    /* للتأكد من الاتجاه من اليمين لليسار */
 }
 
 .footer-grid {
     display: grid;
-    /* جعلها 4 عواميد متساوية على الشاشات الكبيرة */
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding-bottom: 50px;
 }
 
-/* عمود "عن الشركة" */
 .about-col .company-name {
     color: var(--main-color);
     font-size: 1.8rem;
@@ -1158,7 +1103,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* أيقونات السوشيال ميديا بشكل دوائر مثل الصورة */
 .footer-social {
     display: flex;
     gap: 10px;
@@ -1184,7 +1128,6 @@ body {
 
 .footer-col h4 {
     color: var(--gold-accent, #fff);
-    /* لون العنوان */
     margin-bottom: 25px;
     font-size: 1.3rem;
     position: relative;
@@ -1222,7 +1165,6 @@ body {
     padding-right: 10px;
 }
 
-/* عمود اتصل بنا */
 .footer-contact-info p {
     display: flex;
     align-items: center;
@@ -1238,7 +1180,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* ضبط الجزء السفلي ليصبح مثل الصورة (يمين ويسار) */
 .footer-bottom {
     background: #081223;
     padding: 20px 0;
@@ -1263,18 +1204,15 @@ body {
     text-decoration: none;
 }
 
-/* التجاوب مع الجوال */
 @media (max-width: 992px) {
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* عمودين في التابلت */
     }
 }
 
 @media (max-width: 600px) {
     .footer-grid {
         grid-template-columns: 1fr;
-        /* عمود واحد في الجوال */
         text-align: center;
     }
 
@@ -1297,7 +1235,6 @@ body {
     }
 }
 
-/* زر الواتساب العائم */
 .whatsapp-sticky {
     position: fixed;
     bottom: 25px;
@@ -1326,17 +1263,6 @@ body {
     }
 }
 
-/* --- ضبط الهيدر واللوجو --- */
-/* .main-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 10px 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-} */
 
 .logo-box {
     display: flex;
@@ -1344,29 +1270,23 @@ body {
     gap: 10px;
     text-decoration: none;
     flex-shrink: 0;
-    /* يمنع اللوجو من الانضغاط */
 }
 
 .logo-img {
     width: 60px;
-    /* يمكنك تكبير أو تصغير العرض من هنا */
     height: 60px;
-    /* نفس الطول لجعلها مربعة */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* لإخفاء أي جزء خارج المساحة */
 }
 
 .logo-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* يجعل الصورة تظهر بالكامل داخل المربع دون تمدد */
 }
 
-/* لضمان ثبات الاسم وعدم نزوله لسطر جديد */
 .company-name {
     font-size: 1.4rem;
     white-space: nowrap;
@@ -1382,7 +1302,6 @@ body {
         top: 70px;
         left: -100%;
         width: 280px;
-        /* عرض محدد للقائمة الجانبية */
         height: 100vh;
         background: white;
         flex-direction: column;
@@ -1392,12 +1311,10 @@ body {
         box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
         z-index: 999;
         display: block !important;
-        /* لضمان الظهور */
     }
 
     .nav-links.active {
         left: 0;
-        /* يظهر من اليسار */
     }
 
     .nav-links li {
@@ -1415,12 +1332,10 @@ body {
     .nav-links li a:hover,
     .nav-links li a.active {
         transform: none;
-        /* إلغاء حركة الصعود في الموبايل */
         background: rgba(0, 168, 255, 0.05);
         border-right: 4px solid var(--main-color);
     }
 
-    /* ضبط منطقة الأزرار في الموبايل */
     .actions {
         display: flex;
         align-items: center;
@@ -1440,7 +1355,6 @@ body {
         font-size: 0.85rem;
     }
 
-    /* إخفاء نص "اتصل الآن" في الشاشات الصغيرة جداً وترك الأيقونة */
     @media (max-width: 480px) {
         .call-btn span {
             display: none;
@@ -1470,16 +1384,15 @@ html{
 @media (max-width: 992px) {
     .main-header .container {
         display: flex;
-        justify-content: space-between; /* هذا السطر هو الذي سيضع اللوجو يمين والأيقونة شمال تلقائياً */
+        justify-content: space-between; 
         align-items: center;
         padding: 0 20px;
     }
 
-    /* هذا الكود سيضمن أن أيقونة المنيو تذهب لأقصى الشمال دائماً */
     .actions {
         display: flex;
         align-items: center;
-        margin-right: auto; /* هذه هي "السحر" الذي سيجعلها تلتصق بأقصى الشمال مهما كان حجم الشاشة */
+        margin-right: auto; 
     }
 }
 
@@ -1502,7 +1415,7 @@ html{
 
 .container {
     display: flex;
-    justify-content: space-between; /* اللوجو يمين والأكشنز شمال */
+    justify-content: space-between; 
     align-items: center;
     max-width: 1300px;
     margin: 0 auto;
@@ -1534,13 +1447,11 @@ html{
     gap: 15px;
 }
 
-/* --- Mobile Media Queries (The Fix) --- */
 @media (max-width: 992px) {
-    /* القائمة الجانبية */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* مخفية تماماً جهة اليمين */
+        right: -100%; 
         width: 280px;
         height: 100vh;
         background: white;
@@ -1552,7 +1463,7 @@ html{
     }
 
     .nav-links.active {
-        right: 0; /* تظهر من اليمين لما تضغط على المنو */
+        right: 0;
     }
 
     .nav-links li {
@@ -1570,7 +1481,7 @@ html{
         font-size: 1.8rem;
         cursor: pointer;
         color: var(--dark-blue);
-        order: 2; /* تأكيد مكانها في الآخر */
+        order: 2;
     }
 
     .call-btn {
@@ -1579,7 +1490,6 @@ html{
         font-size: 0.8rem;
     }
 
-    /* إخفاء النص في الموبايلات الصغيرة جداً */
     @media (max-width: 480px) {
         .call-btn span { display: none; }
         .call-btn { width: 40px; height: 40px; border-radius: 50%; justify-content: center; padding: 0; }
@@ -1587,7 +1497,6 @@ html{
     }
 }
 
-/* زر الواتساب دائماً فوق */
 .whatsapp-sticky {
     z-index: 1100;
 }
@@ -1599,40 +1508,123 @@ html{
 
 
 
-/* ضبط أساسيات الصفحة لمنع التداخل والاهتزاز */
 html, body {
     max-width: 100%;
-    overflow-x: hidden; /* يمنع السكرول يمين وشمال نهائياً */
+    overflow-x: hidden; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit; /* يضمن أن الحواف والـ Padding لا تزيد من عرض العناصر */
+    box-sizing: inherit; 
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px; /* مسافة أمان على الأجناب في الموبايل */
+    padding: 0 15px; 
 }
 
 .service-img {
     width: 100%;
-    height: 200px; /* تقدري تتحكمي في الارتفاع */
+    height: 200px; 
     overflow: hidden;
-    border-radius: 10px 10px 0 0; /* عشان الحواف اللي فوق تكون دائرية مع الكارد */
+    border-radius: 10px 10px 0 0; 
 }
 
 .service-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* عشان الصورة تملأ المساحة بدون ما تتمط */
+    object-fit: cover; 
     transition: transform 0.3s ease;
 }
 
 .service-box:hover .service-img img {
-    transform: scale(1.1); /* تأثير زووم خفيف عند الوقوف بالماوس */
+    transform: scale(1.1); 
+}
+
+
+.areas-section {
+    padding: 80px 0;
+    background-color: #f9fbff;
+    direction: rtl;
+    text-align: center;
+}
+
+.areas-section .container {
+    display: block !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.areas-section .section-header {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.areas-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 15px;
+    width: 100%;
+    opacity: 1; 
+    transform: none !important;
+}
+
+.area-item {
+    background: #ffffff;
+    padding: 15px 10px;
+    border-radius: 12px;
+    border: 1px solid #e0eefd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.area-item span {
+    font-weight: 800;
+    color: #0052cc;
+    font-size: 1rem;
+    display: block;
+}
+
+.area-item:hover {
+    background: #00a8ff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 168, 255, 0.2);
+}
+
+.area-item:hover span {
+    color: #fff;
+}
+
+.call-sticky {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    background: #00a8ff;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }

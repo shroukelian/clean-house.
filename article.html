@@ -168,7 +168,6 @@
         <article class="main-article-body animate-up">
             <img id="art-img" src="" alt="" class="featured-img">
             <div id="art-body" class="rendered-content">
-                <!-- المحتوى يظهر هنا -->
             </div>
 
             <div class="cta-box animate-up">
@@ -289,11 +288,9 @@
             const params = new URLSearchParams(window.location.search);
             const id = params.get('id');
 
-            // إذا كان الـ ID موجوداً في البيانات
             if (id && blogData[id]) {
                 const article = blogData[id];
                 
-                // تحديث المحتوى
                 document.getElementById('art-title').innerText = article.title;
                 document.getElementById('page-title').innerText = article.title;
                 document.getElementById('art-date').innerHTML = `<i class="fas fa-calendar-alt"></i> ${article.date}`;
@@ -301,18 +298,15 @@
                 document.getElementById('art-img').alt = article.title;
                 document.getElementById('art-body').innerHTML = article.body;
 
-                // تشغيل الأنيميشن
                 setTimeout(() => {
                     document.querySelectorAll('.animate-up').forEach(el => el.classList.add('show'));
                 }, 100);
 
             } else {
-                // إذا لم يوجد ID يرجع للرئيسية
                 window.location.href = 'index.html';
             }
         });
 
-        // سكرول بسيط لتغيير شفافية الناف بار
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.article-nav');
             if(window.scrollY > 50) {
